@@ -1,0 +1,58 @@
+mina_hipchat
+============
+
+mina_hipchat is a gem that adds tasks for sending notifications to [Sidekiq] (http://hipchat.com/)
+using [Mina] (http://nadarei.co/mina).
+
+# Getting Started
+
+## Installation
+
+    gem install mina_hipchat
+
+## Example
+
+## Usage example
+
+    require 'mina_hipchat/tasks'
+    ...
+    # to make logs persistent between deploys
+    set :shared_paths, ['log']
+
+    task :deploy do
+      deploy do
+        invoke :'hipchat:notify_deploy_started'
+        ...
+
+        to :launch do
+          ...
+          invoke :'hipchat:notify_deploy_finished'
+        end
+      end
+    end
+
+## Available Tasks
+
+* hipchat:notify_deploy_started
+* hipchat:notify_deploy_finished
+
+## Available Options
+
+| Option               | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| *hipchat_auth_token* | Sets the hipchat api auth token.                    |
+| *hipchat_rooms*      | Sets the rooms where notifications will be sent to. |
+| *hipchat_from*       | Sets the notification 'from' user label.            |
+| *hipchat_author*     | Sets the deployment author name,                    |
+| *hipchat_color*      | Sets the notification color.                        |
+
+## Todo
+
+* Write some tests
+* Make code more DRY
+
+## Copyright
+
+Copyright (c) 2014 Mike Bajur http://github.com/mbajur
+
+See LICENSE for further details.
