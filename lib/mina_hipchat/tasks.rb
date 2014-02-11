@@ -11,7 +11,7 @@ set_default :hipchat_rooms, []
 
 # ### hipchat_from
 # Sets the notification 'from' user label
-set_default :hipchat_from, ''
+set_default :hipchat_from, 'Deploy'
 
 # ### hipchat_color
 # Sets the notification color
