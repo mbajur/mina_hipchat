@@ -4,13 +4,9 @@ mina_hipchat
 mina_hipchat is a gem that adds tasks for sending notifications to [Sidekiq] (http://hipchat.com/)
 using [Mina] (http://nadarei.co/mina).
 
-# Getting Started
-
 ## Installation
 
     gem install mina_hipchat
-
-## Example
 
 ## Usage example
 
