@@ -41,7 +41,7 @@ using [Mina] (http://nadarei.co/mina).
 | *__hipchat_rooms__**      | Sets the rooms where notifications will be sent to. |
 | *hipchat_from*            | Sets the notification 'from' user label.            |
 | *hipchat_author*          | Sets the deployment author name,                    |
-| *hipchat_color*           | Sets the notification color.                        |
+| *hipchat_colors*          | Sets the notification colors.                       |
 
 __* required options__
 

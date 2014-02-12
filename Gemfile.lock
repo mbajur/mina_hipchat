@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mina_hipchat (0.0.1)
+    mina_hipchat (0.0.2)
       mina
 
 GEM
