@@ -15,7 +15,7 @@ set_default :hipchat_from, 'Deploy'
 
 # ### hipchat_color
 # Sets the notification color
-set_default :hipchat_colors, {start: 'gray', finish: 'green'}
+set_default :hipchat_colors, {started: 'gray', finished: 'green'}
 
 # ### hipchat_author
 # Sets the deployment author name
@@ -31,7 +31,7 @@ namespace :hipchat do
     message = "#{hipchat_author} is deploying #{application}..."
 
     for room in hipchat_rooms
-      queue %[curl -X POST https://api.hipchat.com/v1/rooms/message -d "auth_token=#{hipchat_auth_token}&room_id=#{room}&from=#{hipchat_from}&message=#{message}&color=#{hipchat_color[:start]}" --silent > /dev/null]
+      queue %[curl -X POST https://api.hipchat.com/v1/rooms/message -d "auth_token=#{hipchat_auth_token}&room_id=#{room}&from=#{hipchat_from}&message=#{message}&color=#{hipchat_color[:started]}" --silent > /dev/null]
     end
   end
 
@@ -42,7 +42,7 @@ namespace :hipchat do
     message = "#{hipchat_author} finished deploying #{application}. See it here: <a href='http://#{domain}'>http://#{domain}</a>"
 
     for room in hipchat_rooms
-      queue %[curl -X POST https://api.hipchat.com/v1/rooms/message -d "auth_token=#{hipchat_auth_token}&room_id=#{room}&from=#{hipchat_from}&message=#{message}&color=#{hipchat_color[:finish]}&type=html" --silent >/dev/null]
+      queue %[curl -X POST https://api.hipchat.com/v1/rooms/message -d "auth_token=#{hipchat_auth_token}&room_id=#{room}&from=#{hipchat_from}&message=#{message}&color=#{hipchat_color[:finished]}&type=html" --silent >/dev/null]
     end
   end
 
